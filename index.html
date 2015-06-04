@@ -52,67 +52,175 @@
 				</section>
 
 				<section>
-					<section>
-						<h1>Meet <span class="react-blue">React</span></h1>
-						<p>A library for creating user interfaces.</p>
-					</section>
-					<section>
-						<h1>Meet <span class="react-blue">React</span></h1>
-						<p>Renders your UI and responds to events.</p>
-					</section>
-					<section>
-						<h1>Meet <span class="react-blue">React</span></h1>
-						<p>AKA: The V in MVC</p>
-					</section>
-					<section>
-						<h1>Meet <span class="react-blue">React</span></h1>
-						<p>Plays nicely with your stack, whatever it may be.</p>
-					</section>
+						<h2>Meet <span class="react-blue">React</span></h2>
+						<ul>
+							<li>A library for creating user interfaces.</li>
+							<li class="fragment">Renders your UI and responds to events.</li>
+							<li class="fragment">AKA: The V in MVC</li>
+							<li class="fragment">Plays nicely with your stack, whatever it may be.</li>
+						</ul>
 				</section>
-				<section>
-					<h2>Rethinking Best Practices</h2>
-					<dl>
-						<dt>Prerequisite</dt>
-						<dd>Combine DOM generation and display logic<dd>
-						<dt>React’s design<dt>
-						<dd>Re-render the whole app on every update<dd>
-						<dt>React’s implementation</dt>
-						<dd>Virtual DOM and synthetic events<dd>
-					</dl>
-				</section>
+
 				<section>
 					<section>
-						<h2>1. Build <span class="react-blue">components</span>, not templates.</h2>
-						<aside class="notes">
-					        Or: mixing markup and display logic
-					    </aside>
-				    </section>
-					<section>
+						<h2><span class="react-blue">React</span> first impression</h2>
 						<pre><code class="javascript" data-trim>
-var Timer = React.createClass({
+var LikeButton = React.createClass({
   getInitialState: function() {
-    return {secondsElapsed: 0};
+    return {liked: false};
   },
-  tick: function() {
-    this.setState({secondsElapsed: this.state.secondsElapsed + 1});
-  },
-  componentDidMount: function() {
-    this.interval = setInterval(this.tick, 1000);
-  },
-  componentWillUnmount: function() {
-    clearInterval(this.interval);
+  handleClick: function(event) {
+    this.setState({liked: !this.state.liked});
   },
   render: function() {
+    var text = this.state.liked ? 'like' : 'haven\'t liked';
     return (
-      &lt;div&gt;Seconds Elapsed: {this.state.secondsElapsed}&lt;/div&gt;
+      &lt;p onClick={this.handleClick}&gt;
+        You {text} this. Click to toggle.
+      &lt;/p&gt;
     );
   }
 });
 
-React.render(&lt;Timer /&gt;, mountNode);
+React.render(
+  &lt;LikeButton /&gt;,
+  document.getElementById('example')
+);
+							</code></pre>
+						</section>
+						<section>
+							<h2>WTF?!</h2>
+							<pre><code class="javascript" data-trim>
+return (
+  &lt;p onClick={this.handleClick}&gt;
+    You {text} this. Click to toggle.
+  &lt;/p&gt;
+);
 							</code></pre>
 						</section>
 					</section>
+					<section>
+						<section>
+							<h2><q>&ldquo;Reaction&rdquo;</q> to <span class="react-blue">React</span></h2>
+							<pre><code class="javascript" data-trim>
+return (
+  &lt;p onClick={this.handleClick}&gt;
+    You {text} this. Click to toggle.
+  &lt;/p&gt;
+);
+							</code></pre>
+							<ul class="meme">
+								<li class="fragment">
+									<img src="lib/img/kidding.jpg"/>
+									<q>&ldquo;Ugly.&rdquo;</q>
+								</li>
+								<li class="fragment">
+									<img src="lib/img/rage.jpg" />
+									<q>&ldquo;Separation of concerns!!&rdquo;</q>
+								</li>
+								<li class="fragment">
+									<img src="lib/img/questioning.jpg" />
+									<q>&ldquo;React is a templating language.&rdquo;</q>
+								</li>
+							</ul>
+						</section>
+						<section>
+							<h2><q>&ldquo;Reaction&rdquo;</q> to <span class="react-blue">React</span></h2>
+							<pre><code class="javascript" data-trim>
+return (
+  &lt;p onClick={this.handleClick}&gt;
+    You {text} this. Click to toggle.
+  &lt;/p&gt;
+);
+							</code></pre>
+							<ul class="meme no-bullets">
+								<li>
+									<img src="lib/img/cool.jpg"/>
+									<ul>
+										<li class="fragment">Don’t sweat it</li>
+										<li class="fragment">JSX</li>
+										<li class="fragment">It’s actually just Javascript</li>
+										<li class="fragment">It’s not a templating language</li>
+										<li class="fragment">If you don’t like it, you don’t hafta</li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</section>
+					<section>
+						<h2>React Second Impressions</h2>
+						<ul>
+							<li class="fragment" data-fragment-index="1">
+								<span class="fragment highlight-red" data-fragment-index="4">Oh! There’s 2-way data-binding, like Angular!</span>
+							</li>
+							<li class="fragment" data-fragment-index="2">
+								<span class="fragment highlight-red" data-fragment-index="4">Oh! It can work with Backbone. How I do?</span>
+							</li>
+							<li class="fragment" data-fragment-index="3">
+								<span class="fragment highlight-red" data-fragment-index="4">Oh! It can do animations and SVG!</span>
+							</li>
+						</ul>
+						<p></p>
+						<h3 class="fragment" data-fragment-index="4">Wait. Let’s back up.</h3>
+					</section>
+					<section><h2>Some Fundamentals</h2></section>
+					<section><h2>#1</h2><h2>Everything is a Component</h2></section>
+					<section>
+						<h2><span class="react-blue">React</span> has no...</h2>
+						<ul class="no-bullets">
+							<li class="fragment">... controllers</li>
+							<li class="fragment">... directives</li>
+							<li class="fragment">... templates</li>
+							<li class="fragment">... global event listeners</li>
+							<li class="fragment">... models</li>
+							<li class="fragment">... no view models</li>
+						</ul>
+						<p></p>
+						<h2><span class="fragment">Just</span> <span class="fragment">Components</span></h2>
+					</section>
+					<section>
+						<h2>What if we “separate” another way?</h2>
+						<img src="lib/img/cart.jpg" height="400" />
+					</section>
+					<section>
+						<h2>Separation of <span class="cross">Concerns</span> Components</h2>
+						<ul>
+							<li class="fragment">composable</li>
+							<li class="fragment">reusable</li>
+							<li class="fragment">maintainable</li>
+							<li class="fragment">testable</li>
+						</ul>
+						<p></p>
+						<p class="fragment"><b>*If*</b> Components are truly self-contained</p>
+					</section>
+					<section><h2>#2</h2><h2>Single Source of Truth</h2></section>
+					<section>
+						<section>
+							<h2>Traditional data flows</h2>
+						</section>
+						<section>
+							<h2>Data handed from parent to child</h2>
+						</section>
+						<section>
+							<h2>Props accessed on this.props</h2>
+						</section>
+						<section>
+							<h2>Props are immutable</h2>
+						</section>
+					</section>
+					<section>
+						<section><h2>#3</h2><h2>Virtual DOM</h2></section>
+						<section><h2>What’s worse than having state in two places at once?</h2></section>
+						<section><h2>Touching the DOM is evil</h2></section>
+						<section><h2>Back to JSX</h2></section>
+						<section><h2>JSX Compiled</h2></section>
+						<section><h2>It’s just Javascript</h2></section>
+						<section><h2>Virtual DOM</h2></section>
+					</section>
+					<section>
+						<h2>Why all this is awesome</h2>
+					</section>
+					<section><h1>End</h1></section>
 			</div>
 
 		</div>

@@ -312,3 +312,16 @@ section img {
   max-height: 600px;
   /*background: white;
     color: #4d4d4c;*/ }
+
+.meme img {
+  height: 74px;
+  vertical-align: middle; }
+.meme q {
+  vertical-align: middle; }
+
+ul.no-bullets {
+  list-style-type: none; }
+
+.cross {
+  text-decoration: line-through;
+  color: red; }
