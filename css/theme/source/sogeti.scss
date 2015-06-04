@@ -1,0 +1,122 @@
+/**
+ * Sogeti theme for reveal.js.
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/sogeti/sogeti.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+$sogetiRed: #ff4411;
+$sogetiGray: #d9d9d9;
+$sogetiBrown: #444433;
+$sogetiBeige: #ccbbaa;
+$sogetiYellow: #ffcc33;
+$sogetiOrange: #ff9900;
+$sogetiSecondaryRed: #bb3322;
+$reactBlue: #61dafb;
+
+$mainColor: #222;
+$headingColor: #222;
+
+$mainFontSize: 36px;
+$mainFont: 'Sogeti', Helvetica, sans-serif;
+$headingFont: 'Sogeti', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+body {
+	font-family: $mainFont;
+	font-weight: normal;
+	color: $mainColor;
+}
+
+.logo {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    
+    img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.course {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    
+    img {
+        width: 50px;
+        height: auto;
+    }
+    span {
+        vertical-align: 150%;
+    }
+    
+}
+
+section {
+    img {
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.about {
+	img {
+		border-radius: 50%; 
+		width: 100px;
+	}
+}
+
+.sogeti-red {
+	color: $sogetiRed;
+}
+
+.react-blue {
+    color: $reactBlue;
+}
+
+/*.reveal pre {
+	font-size: 1em;
+}*/
+
+.reveal pre code {
+    word-wrap: break-word;
+    max-height: 600px;
+    /*background: white;
+    color: #4d4d4c;*/
+}

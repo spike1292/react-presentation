@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/theme/sogeti.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -51,6 +51,68 @@
 		            </div>
 				</section>
 
+				<section>
+					<section>
+						<h1>Meet <span class="react-blue">React</span></h1>
+						<p>A library for creating user interfaces.</p>
+					</section>
+					<section>
+						<h1>Meet <span class="react-blue">React</span></h1>
+						<p>Renders your UI and responds to events.</p>
+					</section>
+					<section>
+						<h1>Meet <span class="react-blue">React</span></h1>
+						<p>AKA: The V in MVC</p>
+					</section>
+					<section>
+						<h1>Meet <span class="react-blue">React</span></h1>
+						<p>Plays nicely with your stack, whatever it may be.</p>
+					</section>
+				</section>
+				<section>
+					<h2>Rethinking Best Practices</h2>
+					<dl>
+						<dt>Prerequisite</dt>
+						<dd>Combine DOM generation and display logic<dd>
+						<dt>React’s design<dt>
+						<dd>Re-render the whole app on every update<dd>
+						<dt>React’s implementation</dt>
+						<dd>Virtual DOM and synthetic events<dd>
+					</dl>
+				</section>
+				<section>
+					<section>
+						<h2>1. Build <span class="react-blue">components</span>, not templates.</h2>
+						<aside class="notes">
+					        Or: mixing markup and display logic
+					    </aside>
+				    </section>
+					<section>
+						<pre><code class="javascript" data-trim>
+var Timer = React.createClass({
+  getInitialState: function() {
+    return {secondsElapsed: 0};
+  },
+  tick: function() {
+    this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+  },
+  componentDidMount: function() {
+    this.interval = setInterval(this.tick, 1000);
+  },
+  componentWillUnmount: function() {
+    clearInterval(this.interval);
+  },
+  render: function() {
+    return (
+      &lt;div&gt;Seconds Elapsed: {this.state.secondsElapsed}&lt;/div&gt;
+    );
+  }
+});
+
+React.render(&lt;Timer /&gt;, mountNode);
+							</code></pre>
+						</section>
+					</section>
 			</div>
 
 		</div>

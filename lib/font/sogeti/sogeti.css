@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Sogeti';
+    src: url('sogeti.eot');
+    src: url('sogeti.eot?#iefix') format('embedded-opentype'),
+         url('sogeti.woff') format('woff'),
+         url('sogeti.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
