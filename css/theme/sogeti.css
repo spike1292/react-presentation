@@ -322,6 +322,9 @@ section img {
 ul.no-bullets {
   list-style-type: none; }
 
-.cross {
-  text-decoration: line-through;
-  color: red; }
+.reveal .slides section .fragment.cross {
+  opacity: 1;
+  visibility: visible; }
+  .reveal .slides section .fragment.cross.visible {
+    text-decoration: line-through;
+    color: red; }
