@@ -285,8 +285,8 @@ body {
   bottom: 15px;
   left: 15px; }
   .course img {
-    width: 50px;
-    height: auto; }
+    max-width: 125px;
+    max-height: 100px; }
   .course span {
     vertical-align: 150%; }
 
