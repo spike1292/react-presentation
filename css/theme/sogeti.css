@@ -310,8 +310,8 @@ section img {
 .reveal pre code {
   word-wrap: break-word;
   max-height: 600px;
-  /*background: white;
-    color: #4d4d4c;*/ }
+  background: white;
+  color: #4d4d4c; }
 
 .meme img {
   height: 74px;
