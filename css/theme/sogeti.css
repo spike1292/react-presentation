@@ -328,3 +328,9 @@ ul.no-bullets {
   .reveal .slides section .fragment.cross.visible {
     text-decoration: line-through;
     color: red; }
+
+.cart-example img.cart {
+  height: 500px; }
+
+.dataflow img {
+  max-height: 550px; }

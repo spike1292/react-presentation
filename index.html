@@ -145,10 +145,11 @@ return (
 									</ul>
 								</li>
 							</ul>
+							<aside class="notes">JSX will be handle later</aside>
 						</section>
 					</section>
 					<section>
-						<h2>React Second Impressions</h2>
+						<h2><span class="react-blue">React</span> Second Impressions</h2>
 						<ul>
 							<li class="fragment" data-fragment-index="1">
 								<span class="fragment cross" data-fragment-index="4">Oh! There’s 2-way data-binding, like Angular!</span>
@@ -185,26 +186,26 @@ return (
 						<p></p>
 						<h2><span class="fragment">Just</span> <span class="fragment">Components</span></h2>
 					</section>
-					<section>
+					<section class="cart-example">
 						<section data-transition="fade">
 							<h2>What if we &ldquo;separate&rdquo; another way?</h2>
-							<img src="lib/img/cart.jpg" height="400" />
+							<img src="lib/img/cart.jpg" class="cart" />
 						</section>
 						<section data-transition="fade">
 							<h2>What if we &ldquo;separate&rdquo; another way?</h2>
-							<img src="lib/img/cartcomponent.jpg" height="400" />
+							<img src="lib/img/cartcomponent.jpg" class="cart" />
 						</section>
 						<section data-transition="fade">
 							<h2>What if we &ldquo;separate&rdquo; another way?</h2>
-							<img src="lib/img/cartlistcomponent.jpg" height="400" />
+							<img src="lib/img/cartlistcomponent.jpg" class="cart" />
 						</section>
 						<section data-transition="fade">
 							<h2>What if we &ldquo;separate&rdquo; another way?</h2>
-							<img src="lib/img/cartitemcomponent.jpg" height="400" />
+							<img src="lib/img/cartitemcomponent.jpg" class="cart" />
 						</section>
 						<section data-transition="fade">
 							<h2>What if we &ldquo;separate&rdquo; another way?</h2>
-							<img src="lib/img/buttoncomponent.jpg" height="400" />
+							<img src="lib/img/buttoncomponent.jpg" class="cart" />
 						</section>
 					</section>
 					<section>
@@ -220,39 +221,101 @@ return (
 					</section>
 					<section><h2>#2</h2><h2>Single Source of Truth</h2></section>
 					<section>
-						<section>
-							<h2>Traditional data flows</h2>
-							<p class="fragment">No framework: Any component can communicate with any other component</p>
-							<p class="fragment">Backbone: Pub-sub <br/><code>item.on('change:name', function() {…</code></p>
-							<p class="fragment">Angular: 2-way data binding and $digest loop<br/><code>$scope.name = …</code></p>
-							<p class="fragment">React: 1-way data flow</p>
-						</section>
-						<section>
-							<h2>Data handed from parent to child</h2>
-						</section>
-						<section>
+						<h2>Traditional data flows</h2>
+						<p class="fragment">No framework: Any component can communicate with any other component</p>
+						<p class="fragment">Backbone: Pub-sub <br/><code>item.on('change:name', function() {…</code></p>
+						<p class="fragment">Angular: 2-way data binding and $digest loop<br/><code>$scope.name = …</code></p>
+						<p class="fragment">React: 1-way data flow</p>
+						<aside class="notes">explain react data flow with props and state</aside>
+					</section>
+					<section class="dataflow">
+						<h3>Data handed from parent to child</h3>
+						<img src="lib/img/dataflow.jpg" />
+					</section>
+					<section class="dataflow">
+						<section data-transition="fade">
 							<h2>Props accessed on this.props</h2>
+							<img src="lib/img/props-access-1.jpg" />
 						</section>
-						<section>
-							<h2>Props are immutable</h2>
+						<section data-transition="fade">
+							<h2>Props accessed on this.props</h2>
+							<img src="lib/img/props-access-2.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>Props accessed on this.props</h2>
+							<img src="lib/img/props-access-3.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>Props accessed on this.props</h2>
+							<img src="lib/img/props-access-4.jpg" />
 						</section>
 					</section>
+					<section class="dataflow">
+						<section data-transition="fade">
+							<h2>Props are immutable</h2>
+							<img src="lib/img/immutable-1.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>Props are immutable</h2>
+							<img src="lib/img/immutable-2.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>Props are immutable</h2>
+							<img src="lib/img/immutable-3.jpg" />
+						</section>
+					</section>
+					<section class="dataflow">
+						<section data-transition="fade">
+							<h2>State is mutable</h2>
+							<img src="lib/img/state-1.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>State is mutable</h2>
+							<img src="lib/img/state-2.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>State is mutable</h2>
+							<img src="lib/img/state-3.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>State is mutable</h2>
+							<img src="lib/img/state-4.jpg" />
+						</section>
+					</section>
+					<section class="dataflow">
+						<section data-transition="fade">
+							<h2>State can become props</h2>
+							<img src="lib/img/state-props-1.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>State can become props</h2>
+							<img src="lib/img/state-props-2.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>State can become props</h2>
+							<img src="lib/img/state-props-3.jpg" />
+						</section>
+						<section data-transition="fade">
+							<h2>State can become props</h2>
+							<img src="lib/img/state-props-4.jpg" />
+						</section>
+					</section>
+					<section><h2>#3</h2><h2>Virtual DOM</h2></section>
 					<section>
-						<section><h2>#3</h2><h2>Virtual DOM</h2></section>
-						<section>
-							<h2>What’s worse than having state in two places at once?</h2>
-							<h3 class="fragment">Having state in the DOM.</h3>
-						</section>
-						<section>
-							<h2>Touching the DOM is evil</h2>
-							<ul>
-								<li class="fragment">It’s inconsistent</li>
-								<li class="fragment">It’s hard to test</li>
-								<li class="fragment">It’s brittle</li>
-								<li class="fragment">It’s EXPENSIVE!</li>
-						</section>
-						<section>
-							<h2>Back to JSX</h2>
+						<h2>What’s worse than having state in two places at once?</h2>
+						<h3 class="fragment">Having state in the DOM.</h3>
+					</section>
+					<section>
+						<h2>Touching the DOM is evil</h2>
+						<ul>
+							<li class="fragment">It’s inconsistent</li>
+							<li class="fragment">It’s hard to test</li>
+							<li class="fragment">It’s brittle</li>
+							<li class="fragment">It’s EXPENSIVE!</li>
+					</section>
+					<section>
+						<section data-transition="fade">
+							<h2>Back to <span class="react-blue">JSX</span></h2>
 							<pre><code class="javascript" data-trim>
 var LikeButton = React.createClass({
   getInitialState: function() {
@@ -272,8 +335,8 @@ var LikeButton = React.createClass({
 });
 </code></pre>
 						</section>
-						<section>
-							<h2>JSX Compiled</h2>
+						<section data-transition="fade">
+							<h2><span class="react-blue">JSX</span> Compiled</h2>
 							<pre><code class="javascript" data-trim>
 var LikeButton = React.createClass({displayName: "LikeButton",
   getInitialState: function() {
@@ -293,24 +356,24 @@ var LikeButton = React.createClass({displayName: "LikeButton",
 });
 							</code></pre>
 						</section>
-						<section>
-							<h2>Virtual DOM</h2>
-							<ul>
-								<li class="fragment">It’s a pure Javascript, in-memory representation of the DOM</li>
-								<li class="fragment">render() fires whenever something changes</li>
-								<li class="fragment">React modifies the real DOM to match</li>
-								<li class="fragment">It’s FAST</li>
-								<li class="fragment">It’s pure</li>
-								<li class="fragment">It just works</il>
-							</ul>
-						</section>
 					</section>
 					<section>
-						<h2>Why all this is awesome</h2>
+						<h2>Virtual DOM</h2>
 						<ul>
-							<li>One-way data flow keeps complexity under control</li>
-							<li>Easy to debug self-contained components</li>
-							<li>Library doesn’t dictate too much</li>
+							<li class="fragment">It’s a pure Javascript, in-memory representation of the DOM</li>
+							<li class="fragment">render() fires whenever something changes</li>
+							<li class="fragment">React modifies the real DOM to match</li>
+							<li class="fragment">It’s FAST</li>
+							<li class="fragment">It’s pure</li>
+							<li class="fragment">It just works</il>
+						</ul>
+					</section>
+					<section>
+						<h2>Why all this is <span class="react-blue">awesome</span></h2>
+						<ul>
+							<li class="fragment">One-way data flow keeps complexity under control</li>
+							<li class="fragment">Easy to debug self-contained components</li>
+							<li class="fragment">Library doesn’t dictate too much</li>
 						</ul>
 					</section>
 					<section><h1>End</h1></section>
