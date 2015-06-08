@@ -336,3 +336,6 @@ ul.no-bullets {
   margin-bottom: 0; }
 .dataflow img {
   max-height: 550px; }
+
+html.img-contain div.slide-background {
+  background-size: contain; }
