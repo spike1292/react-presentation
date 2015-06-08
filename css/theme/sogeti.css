@@ -332,5 +332,7 @@ ul.no-bullets {
 .cart-example img.cart {
   height: 500px; }
 
+.dataflow h4 {
+  margin-bottom: 0; }
 .dataflow img {
   max-height: 550px; }
