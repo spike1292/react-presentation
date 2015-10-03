@@ -37,7 +37,6 @@
 	<body>
 		<div class="course">
 			<img src="lib/img/sogeti.jpg"/>
-			<img src="lib/img/fontys.png"/>
 		</div>
 
 		<div class="reveal">
@@ -382,7 +381,7 @@ var LikeButton = React.createClass({displayName: "LikeButton",
   render: function() {
     var text = this.state.liked ? 'like' : 'haven\'t liked';
     return (
-      React.createElement("p", {onClick: this.handleClick}, 
+      React.createElement("p", {onClick: this.handleClick},
         "You ", text, " this. Click to toggle."
       )
     );
