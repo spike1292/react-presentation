@@ -169,11 +169,11 @@ return (
 					</section>
 					<section>
 						<h2>Some Fundamentals</h2>
-						<aside class="notes">
-							#1 Everything is a Component<br/>
-							#2 Single Source of Truth<br/>
-							#3 Virtual DOM
-						</aside>
+						<ol class="fragment">
+							<li>Everything is a Component</li>
+							<li>Single Source of Truth</li>
+							<li>Virtual DOM</li>
+						</ol>
 					</section>
 					<section><h2>#1</h2><h2>Everything is a Component</h2></section>
 					<section>
@@ -347,6 +347,36 @@ return (
 							<li class="fragment">It’s EXPENSIVE!</li>
 					</section>
 					<section>
+						<h2>Virtual DOM</h2>
+						<ul>
+							<li class="fragment">It’s a pure Javascript, in-memory representation of the DOM</li>
+							<li class="fragment">render() fires whenever something changes</li>
+							<li class="fragment">React modifies the real DOM to match</li>
+							<li class="fragment">It’s FAST</li>
+							<li class="fragment">It’s pure</li>
+							<li class="fragment">It just works</li>
+						</ul>
+					</section>
+					<section>
+						<section>
+							<h2>Rendering</h2>
+						</section>
+						<section>
+							<h4>Batching</h4>
+							<img data-src="lib/img/rendering.png" height="400"/>
+						</section>
+						<section>
+							<h4>Sub-tree Rendering</h4>
+							<img data-src="lib/img/rendering-1.png" height="400"/>
+						</section>
+						<section>
+							<h4>Selective Sub-tree Rendering</h4>
+							<pre><code>boolean shouldComponentUpdate(object nextProps, object nextState)
+</code></pre>
+							<img data-src="lib/img/rendering-2.png" height="400"/>
+						</section>
+					</section>
+					<section>
 						<section data-transition="fade">
 							<h2>Back to <span class="react-blue">JSX</span></h2>
 							<pre><code class="javascript" data-trim>
@@ -391,27 +421,16 @@ var LikeButton = React.createClass({displayName: "LikeButton",
 						</section>
 					</section>
 					<section>
-						<h2>Virtual DOM</h2>
-						<ul>
-							<li class="fragment">It’s a pure Javascript, in-memory representation of the DOM</li>
-							<li class="fragment">render() fires whenever something changes</li>
-							<li class="fragment">React modifies the real DOM to match</li>
-							<li class="fragment">It’s FAST</li>
-							<li class="fragment">It’s pure</li>
-							<li class="fragment">It just works</li>
-						</ul>
-					</section>
-					<section>
 						<h2>Why all this is <span class="react-blue">awesome</span></h2>
 						<ul>
 							<li class="fragment">One-way data flow keeps complexity under control</li>
 							<li class="fragment">Easy to debug self-contained components</li>
 							<li class="fragment">Library doesn’t dictate too much</li>
 						</ul>
-					</section>
+					</section>					
 					<section>
-						<h2>A small <span class="react-blue">demo</span></h2>
-						<p><a href="https://github.com/DavidWells/isomorphic-react-example">https://github.com/DavidWells/isomorphic-react-example</a></p>
+						<h2>A small <a href="http://localhost:4444" target="_blank" class="react-blue">demo</span></h2>
+						<p><a href="https://github.com/DavidWells/isomorphic-react-example" target="_blank">https://github.com/DavidWells/isomorphic-react-example</a></p>
 					</section>
 					<section data-background="lib/img/thanks.gif" data-transition="zoom"><h1><span class="thanks">Thanks</span></h1></section>
 			</div>
